@@ -305,7 +305,7 @@ class AppStore extends Component {
     activeTableId: tabsList[0].table,
   }
 
-  setActiveTabId = table => {
+  setActiveTabId = tabId => {
     this.setState({activeTabId: tabId})
   }
   onChaneSearchInput = event => {
@@ -329,7 +329,7 @@ class AppStore extends Component {
   render() {
     const {searchInput, activeTabId} = this.state
     const searchResults = this.getSearchResults()
-    const filteredApps = this.getActiveTabApps(searchResults)
+    const filteredApps = this.getActiveTabId(searchResults)
 
     return (
       <div className="app-container">
